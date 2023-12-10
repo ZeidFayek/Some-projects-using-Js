@@ -1,0 +1,61 @@
+.traffic{
+    background-color: black;
+    width: 100px;
+    height: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 1px;
+}
+.traffic > div{
+    width: 90px;
+    height: 90px;
+    margin: 5px auto;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+.red
+{
+    background-color: red;
+}
+.yellow
+{
+    background-color: yellow;
+}
+.green
+{
+    background-color: lawngreen;
+}
+.road
+{
+    position: relative;
+}
+.car
+{
+    width: 200px;
+    position: absolute;
+    transition:transform 5s ease-in-out ;
+}
+.wheel1
+{
+    position: absolute;
+    width: 35px;
+    top: 45px;
+    left: 18px;
+}
+.wheel2
+{
+    position: absolute;
+    width: 35px;
+    top: 45px;
+    left: 140px;
+}
+.rotateMe{
+    animation-name: rotate;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate{
+    0%{transform: rotate(0) }
+    50%{transform: rotate(360deg) }
+    100%{transform: rotate(0) }
+}

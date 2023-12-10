@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="traffic">
+    <div class="red"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+</div>
+<div class="road">
+    <div class="car">
+        <img src="images/car.png" width="200px">
+        <img src="images/wheel.png" class="wheel1">
+        <img src="images/wheel.png" class="wheel2">
+    </div>
+</div>
+<audio src="mixkit-car-double-horn-719.wav" id="aud"></audio>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $('.red').click(function () {
+        $(this).css('opacity','1')
+        $('.green').css('opacity','0.3')
+        $('.yellow').css('opacity','0.3')
+        stopcar()
+    })
+    $('.yellow').click(function () {
+        $(this).css('opacity','1')
+        $('.green').css('opacity','0.3')
+        $('.red').css('opacity','0.3')
+    })
+    $('.green').click(function () {
+        $(this).css('opacity','1')
+        $('.yellow').css('opacity','0.3')
+        $('.red').css('opacity','0.3')
+        moveCar()
+    })
+    function moveCar() {
+        $('.car').animate({'left':'+=1000px'},5000)
+        $('#aud')[0].play()
+        $('.wheel1','.wheel2').addClass('rotateMe')
+    }
+    function stopcar(){
+        $('.car').stop()
+        $('#aud')[0].pause()
+        $('.wheel1','.wheel2').removeClass('rotateMe')
+    }
+</script>
+</body>
+</html>

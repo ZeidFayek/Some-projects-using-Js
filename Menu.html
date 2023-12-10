@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menu
+        {
+            position: fixed;
+            height: 100vh;
+            width: 300px;
+            background-color: maroon;
+            right: -300px;
+            top: 0;
+            /*display: none*/
+            transition: right 0.5s ease-in-out;
+        }
+        a{
+            color: #ffffff;
+            display: block;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 25px;
+            border-bottom: 1px solid white;
+        }
+        .active
+        {
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+<button>Menu</button>
+<div class="menu">
+<a href="#">Home</a>
+    <a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+  /*  $('button').click(function () {
+        $('.menu').toggle(1000)
+    })*/
+  $('button').click(function () {
+      $('.menu').toggleClass('active')})
+</script>
+</body>
+</html>

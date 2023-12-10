@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <style>
+        .chaticon{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            color: white;
+            font-size: 35px;
+            text-align: center;
+            border-radius: 50%;
+            box-sizing: border-box;
+            padding-top: 25px ;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
+        .chatbox
+        {
+            width: 300px;
+            height: 350px;
+            background-color: darkred;
+            position: fixed;
+            bottom: 65px;
+            right: 65px;
+            display: none;
+            border-radius: 8px;
+        }
+        .chatheader
+        {
+            color: #ffffff;
+            font-size: 25px;
+            text-align: center;
+            padding: 10px;
+        }
+        .chatbody
+        {
+            width: 100%;
+            height: 265px;
+            background-color: #f5f5f5;
+            overflow: auto;
+        }
+        .chatfooter input:focus
+        {
+            border: none;
+            outline: none;
+        }
+        .chatfooter input
+        {
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            width: 227px;
+            color: white;
+        }
+        .chatfooter{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: darkred;
+        }
+        .chatfooter button
+        {
+            padding: 10px;
+            border: none;
+            border-right: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+<div class="chaticon">
+    Chat
+</div>
+<div class="chatbox">
+    <div class="chatheader">Support Chat</div>
+    <div class="chatbody"></div>
+    <div class="chatfooter"><input><button>Send</button></div>
+</div>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $('.chaticon').click(function () {
+        $('.chatbox').toggle(500)
+    })
+    $('button').click(function () {
+       var inputvalue=$('.chatfooter input').val()
+        $('.chatbody').append('<p>'+inputvalue+'</p>')
+        $('.chatfooter input').val('')
+    });
+
+    $('.chatfooter input').bind("enterKey",function(e){
+        //do stuff here
+    });
+    $('.chatfooter input').keyup(function(e){
+        if(e.keyCode == 13)
+        {
+            var inputvalue=$('.chatfooter input').val()
+            $('.chatbody').append('<p>'+inputvalue+'</p>')
+            $('.chatfooter input').val('')
+        }
+    });
+
+</script>
+</body>
+</html>

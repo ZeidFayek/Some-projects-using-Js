@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Zeyad Fayek Abelmohsen Abdelfattah</p>
+<input>
+<select>
+    <option>One</option>
+    <option>Two</option>
+    <option>Three</option>
+</select>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $('p').dblclick(function () {
+        $(this).css('color','red')
+        $(this).css({'background-color':'gray','color':'red'})
+    })
+   /* $('p').mouseenter(function () {
+        $(this).css({'background-color':'white','color':'blue'})
+    })
+    $('p').mouseleave(function () {
+        $(this).css({'background-color':'white','color':'green'})
+    })*/
+   $('p').hover(function () {
+       $(this).css({'background-color':'white','color':'blue'})
+   },function () {
+       $(this).css({'background-color':'white','color':'green'})
+   })
+    $('input').focus(function () {
+        $(this).css('background-color','red')
+    })
+    $('input').blur(function () {
+        $(this).css('background-color','gray')
+    })
+$('select').change(function () {
+    $(this).css('background-color','red')
+})
+</script>
+</body>
+</html>
